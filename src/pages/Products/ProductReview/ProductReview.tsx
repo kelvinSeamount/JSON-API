@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 
@@ -11,6 +11,7 @@ import { urls } from "../../../utils/urls";
 import { productProps } from "../ProductList/types";
 import ProductReviewStyles from "./ProductReview.module.scss";
 
+//Page Naming
 document.title = "Product Review";
 
 const ProductReview = () => {
@@ -43,6 +44,7 @@ const ProductReview = () => {
 
     return (
       <div>
+        {/*{images?.map((img) => <ProductsImage imageurl={img} />)}*/}
         {reviews.map((review) => (
           <section key={review.date.concat(review.comment)}>
             <p
@@ -62,6 +64,7 @@ const ProductReview = () => {
       </div>
     );
   };
+
   const { title, rating, category, description } = product;
   return (
     <>

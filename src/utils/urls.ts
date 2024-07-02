@@ -1,4 +1,4 @@
-export const urls={
-    productList:`products`,
-    productById:`products/`
-}
+export const urls = {
+  productList: `products`,
+  productById: `products/`,
+};

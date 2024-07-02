@@ -9,9 +9,10 @@ const useApi = (path: string) => {
   const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState(null);
 
+  //Asynchronus Call
   const fetchData = useCallback(async () => {
     try {
-      const response = (await fetch(`${baseUrl}${path}`));
+      const response = await fetch(`${baseUrl}${path}`);
       setLoading(false);
       setData(await response.json());
     } catch (exception) {

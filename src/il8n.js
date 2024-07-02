@@ -23,6 +23,7 @@ i18n.use(initReactI18next).init({
   fallbackLng: "en",
   interpolation: {
     escapeValue: false, // react already safes from xss
+    // Disables escaping since React already handles it, preventing Cross-Site Scripting (XSS) attacks.
   },
 });
 

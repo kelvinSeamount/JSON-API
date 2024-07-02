@@ -19,6 +19,8 @@ const columns: GridColDef[] = [
     valueGetter: (params: { createdAt: string }) => params.createdAt,
   },
 ];
+
+//Page Naming
 document.title = "Product List";
 
 interface productListProps {
@@ -28,9 +30,6 @@ const ProductList = () => {
   const navigate = useNavigate();
   const { data, loading } = useApi(`${urls.productList}`);
   const productListData = data!! as productListProps;
-  if (loading) {
-    <Loading />;
-  }
 
   const handleEvent: GridEventListener<"rowClick"> = (
     params // GridRowParams
@@ -39,6 +38,9 @@ const ProductList = () => {
     return navigate(`/productbyId/${row.id}`);
   };
 
+  if (loading) {
+    <Loading />;
+  }
   return (
     <div className={productListStyles.container}>
       <h4 className={productListStyles.container__geader}>Product List</h4>

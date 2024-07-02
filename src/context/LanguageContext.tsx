@@ -1,7 +1,7 @@
-import {createContext} from 'react';
-export const languageList=['de','en','fr'] as const;
+import { createContext } from "react";
+export const languageList = ["de", "en", "fr"] as const;
 
-export type LanguageProps=(typeof languageList[number])
+export type LanguageProps = (typeof languageList)[number];
 export const languageContext = createContext<
   | {
       language: LanguageProps;
